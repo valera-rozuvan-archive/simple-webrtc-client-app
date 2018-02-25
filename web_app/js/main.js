@@ -97,7 +97,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     try {
       // create connection to the ID server
-      peer = new Peer(callerId, { host: SERVER_IP, port: SERVER_PORT });
+      peer = new Peer(callerId, {
+        host: SERVER_IP,
+        port: SERVER_PORT,
+        debug: 3,
+        secure: true
+      });
 
       // hack to get around the fact that if a server connection cannot
       // be established, the peer and its socket property both still have
